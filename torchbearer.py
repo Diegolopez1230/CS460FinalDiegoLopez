@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Diego Lopez
+Student ID:   827527188
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,13 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return """
+- A single shortest-path run from S is not sufficient because it can't decide the best order to visit the relic chambers before ending at T.
+
+- The structural decision that remains after all inter-location travel costs are known is picking the visitation order of the relic chambers. Different orders make different total costs even when every pairwise shorest path is already known.
+
+- The problem is a search over orders, not a single computation because the algorithm has to compare many possible combinations of relic visits to pick which order makes the minimum total fuel cost.
+"""
 
 
 # =============================================================================
