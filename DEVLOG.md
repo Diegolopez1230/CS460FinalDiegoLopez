@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Diego Lopez
+**Student ID:** 827527188
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,12 +10,12 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – 05/09/2026: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+My plan is to complete the project in the same order as the assignment. I will start with the shortest-path phase using Dijkstra's algoritm, the make the recursive search and pruning logic, and then connect everything in solve(). I think the most difficult part will be constructing the recursive exploration correctly, especially managing the visited relic state during backtracking. I will run the texts in torchbearer.py after each section or part has been completed. My goal is to complete 1-2 parts per day to space out my time and thinking. 
 
 ---
 
