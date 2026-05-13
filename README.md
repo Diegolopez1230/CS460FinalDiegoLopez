@@ -182,5 +182,5 @@ This is important for the route planner because correct shortest path distances 
 ## References
 
 > Bullet list. If none beyond lecture notes, write that.
-
+- Lecture Notes
 - https://coderraj07.medium.com/dijkstras-algorithm-templates-and-problem-solving-9b858912e747 
