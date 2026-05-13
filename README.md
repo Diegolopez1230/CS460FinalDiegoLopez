@@ -128,9 +128,9 @@ This is important for the route planner because correct shortest path distances 
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_loc | node | Where Torchbearer is at |
+| Relics already collected | relics_remaining | set | Not visited relics |
+| Fuel cost so far | cost_so_far | float | Fuel total spent in order to get to the current state |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -138,18 +138,18 @@ This is important for the route planner because correct shortest path distances 
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | Set |
+| Operation: check if relic already collected | Time complexity: O(1) |
+| Operation: mark a relic as collected | Time complexity: O(1) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | The set makes it fast to track which relics are still left |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** k!
+- **Why:** With k relics, the algorithm might need to try every possible relic visit order.
 
 ---
 
