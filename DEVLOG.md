@@ -19,12 +19,12 @@ My plan is to complete the project in the same order as the assignment. I will s
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – 05/12/2026: Part 2 Testing and Debugging
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
-_Your entry here._
+Tested the Part 2 functions by running custom graphs through `select_sources()`, `run_dijkstra()`, and `precompute_distances()`. I found an issue where my `_run_tests()` call was indented wrong at the bottom of the file, which stopped the program from running correctly, and I fixed it by moving it outside the function block.
 
 ---
 
