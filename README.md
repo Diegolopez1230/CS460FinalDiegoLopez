@@ -35,8 +35,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Entrance | For the entrance node, S, we need the shortest travel costs from starting to each first relic that is possible. |
+| Exit | For the exit node, T, it’s here for completeness and duplicate source selection, even though no route happens after T. |
 
 ### Part 2b: Distance Storage
 
@@ -44,20 +44,20 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | The data structure name is a dictionary of dictionaries. |
+| What the keys represent | The keys represent source nodes and destination nodes. |
+| What the values represent | The values represent the min fuel cost from source to destination. |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Dictionary lookup is O(1) average case for both keys becuase of hashing. |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** The Dijkstra runs from the entrance and from every relic chamber, so there are k + 1 total runs.
+- **Cost per run:** One Dijkstra run takes O(m log n).
+- **Total complexity:** O((k + 1)m log n), which simplifies to O(km log n).
+- **Justification (one line):** There are k + 1 selected source nodes, and every source needs one shortest path calculation.
 
 ---
 
