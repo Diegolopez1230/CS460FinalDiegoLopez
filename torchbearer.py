@@ -62,7 +62,15 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    # start w/ the spawn node as the first source
+    sources = [spawn]
+
+    # add each relic as a source if it is not included
+    for relic in relics:
+        if relic not in sources:
+            sources.append(relic)
+
+    return sources
 
 
 def run_dijkstra(graph, source):
@@ -81,7 +89,41 @@ def run_dijkstra(graph, source):
 
     TODO
     """
-    pass
+    # save the shortest known distance to each node
+    dist = {}
+
+    # int every node distance as infinity
+    for node in graph:
+        dist[node] = float('inf')
+
+    # dist from source to itself is 0
+    dist[source] = 0
+
+    # stores (distance, node)
+    pq = [(0, source)]
+
+    while pq:
+
+        # node with the smallest current distance
+        current_cost, current_node = heapq.heappop(pq)
+
+        # pass outdated queue entries
+        if current_cost > dist[current_node]:
+            continue
+
+        # see all outgoing edges from the current node
+        for neighbor, edge_cost in graph[current_node]:
+
+            # solve new possible path cost
+            new_cost = current_cost + edge_cost
+
+            if new_cost < dist[neighbor]:
+
+                dist[neighbor] = new_cost
+
+                heapq.heappush(pq, (new_cost, neighbor))
+
+    return dist
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
@@ -101,7 +143,18 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources = select_sources(spawn, relics, exit_node)
+
+    # nested dictionary for storing shortest path tables
+    dist_table = {}
+
+    # run Dijkstra from every selected source
+    for source in sources:
+
+        # save all shortest distances from this source
+        dist_table[source] = run_dijkstra(graph, source)
+
+    return dist_table
 
 
 # =============================================================================
@@ -287,3 +340,21 @@ def _run_tests():
 
 if __name__ == "__main__":
     _run_tests()
+
+
+"""
+PART 2 TESTING 
+
+if __name__ == "__main__":
+
+    graph = {
+        'S': [('A', 2), ('B', 5)],
+        'A': [('B', 1), ('T', 4)],
+        'B': [('T', 1)],
+        'T': []
+    }
+
+    print(select_sources('S', ['A', 'B'], 'T'))
+    print(run_dijkstra(graph, 'S'))
+    print(precompute_distances(graph, 'S', ['A', 'B'], 'T'))
+"""
