@@ -72,29 +72,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  The invariant for nodes already finalized in S means that their stored distance is the shortest distance from the source and won’t change.
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  The invariant for nodes not yet finalized, not in S, means that their current distance is the shortest path found so far, but a cheaper path can still be found after.
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  Before the first cycle, the source node has a distance of 0, and all other nodes are set to infinity, so the invariant starts right.
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  Finalizing the node with the min distance is right because all edge weights are nonnegative, so no path after can make a smaller distance.
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  When the algorithm is done, each finalized node has its shortest path from the source.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+This is important for the route planner because correct shortest path distances lets the route planner to compare relic visitation orders with the right travel costs.
 
 ---
 
