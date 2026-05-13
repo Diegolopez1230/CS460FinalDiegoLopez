@@ -200,7 +200,19 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return """
+- The failure mode: Greedy only picks the cheapest next relic, but that local choice could take you to a worse total route.
+
+- Counter-example setup: The costs are S -> B = 1, S -> C = 2, and S -> D = 2 from S.
+
+- What greedy picks: Greedy would pick B first because it has the smallest cost from S.
+
+- What optimal picks: The optimal route is S -> B -> D -> C -> T with total fuel cost = 4.
+
+- Why greedy loses: A cheap next step does not guarantee the best full route because the rest of the relic order still affects the total cost.
+
+- The algorithm has to look at different relic visitation orders and compare their total costs to find the best order.
+"""
 
 
 # =============================================================================
