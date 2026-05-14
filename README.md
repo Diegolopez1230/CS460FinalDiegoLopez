@@ -159,23 +159,25 @@ This is important for the route planner because correct shortest path distances 
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** The algorithm tracks the cheapest full route found in `best`.
+- **When it is used:** It’s used after a proper route reaches the exit node and all relics have been collected.
+- **What it allows the algorithm to skip:** It lets the algorithm skip branches where `cost_so_far` is greater than or equal to the best route found.
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** The algorithm knows the current location, remaining relics, relic visit order, current fuel cost, and best solution found.
+- **What the lower bound accounts for:** The lower bound accounts for the fuel already spent in `cost_so_far`.
+- **Why it never overestimates:** It doesn’t overestimate because it only uses the exact fuel already spent and does not guess extra future costs.
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- Pruning is safe because all edge weights are nonnegative, so keeping a branch can only increase the total route cost.
+
+- If `cost_so_far` is already at least the best complete route, that branch cannot become the optimal solution.
 
 ---
 
