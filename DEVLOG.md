@@ -28,9 +28,9 @@ Tested the Part 2 functions by running custom graphs through `select_sources()`,
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – 05/13/2026: Backtracking Search and Pruning
 
-_Your entry here._
+I implemented the recursive search for Parts 5 and 6 using backtracking with `relics_remaining`, `relics_visited_order`, and `cost_so_far` as the search state. I also added pruning with a best so far cost check so the algorithm can skip branches that already cost more than the current optimal route.
 
 ---
 
