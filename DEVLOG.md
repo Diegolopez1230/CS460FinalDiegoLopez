@@ -39,7 +39,7 @@ I implemented the recursive search for Parts 5 and 6 using backtracking with `re
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
 
-_Your entry here._
+After finishing the project, I would improve the pruning strategy even more to reduce the number of routes explored during the search. I would also add more edge case tests and organize some helper functions and comments to make the code easier to read and debug.
 
 ---
 
@@ -49,12 +49,12 @@ _Your entry here._
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 1: Problem Analysis | 0.75 |
+| Part 2: Precomputation Design | 2.5 |
+| Part 3: Algorithm Correctness | 1 |
+| Part 4: Search Design | 0.75 |
+| Part 5: State and Search Space | 1 |
+| Part 6: Pruning | 1 |
+| Part 7: Implementation | 3 |
+| README and DEVLOG writing | 3 |
+| **Total** | 13 |
